@@ -47,7 +47,7 @@ const days = [
 
 export default function Schedule() {
   return (
-    <section className="w-full bg-[#BDD5EC] py-16 md:py-24 px-6 md:px-16 lg:px-24">
+    <section id="schedule" className="w-full bg-[#BDD5EC] py-16 md:py-24 px-6 md:px-16 lg:px-24">
       <div className="w-full max-w-[1440px] mx-auto">
         {/* Header Section */}
         <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">

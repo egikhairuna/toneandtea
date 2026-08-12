@@ -13,30 +13,33 @@ export default function Navbar() {
   return (
     <>
       <nav className="fixed top-6 md:top-12 left-0 right-0 mx-auto w-[92%] md:w-[95%] z-50 bg-white shadow-xl rounded-full px-4 md:px-5 py-1.5 md:py-2 flex items-center justify-between transition-all duration-300">
-        <div className="flex items-center gap-1 md:gap-0">
+        <Link href="/" className="flex items-center gap-1 md:gap-0">
           <Image src="/logo.svg" alt="Tone 'N Tea Logo" width={80} height={80} className="w-auto h-10 md:h-17 shrink-0" />
           <Image src="/logotype.svg?v=2" alt="Tone 'N Tea Logotype" width={102} height={20} className="w-auto h-5 md:h-8 shrink-0" />
-        </div>
+        </Link>
 
         <div className="flex items-center gap-4 md:gap-12">
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-15">
-            <Link href="#" className={`${stefanFont.className} text-tone-rose hover:text-tone-brown transition-colors uppercase text-lg tracking-[0.25em] font-medium`}>
+          <div className="hidden md:flex items-center gap-10 lg:gap-15">
+            <Link href="/about" className={`${stefanFont.className} text-tone-rose hover:text-tone-brown transition-colors uppercase text-lg tracking-[0.25em] font-medium`}>
               Our Story
             </Link>
-            <Link href="#" className={`${stefanFont.className} text-tone-rose hover:text-tone-brown transition-colors uppercase text-lg tracking-[0.25em] font-medium`}>
+            <Link href="https://tonentea.rezerv.co/class" className={`${stefanFont.className} text-tone-rose hover:text-tone-brown transition-colors uppercase text-lg tracking-[0.25em] font-medium`}>
               Classes
             </Link>
-            <Link href="#" className={`${stefanFont.className} text-tone-rose hover:text-tone-brown transition-colors uppercase text-lg tracking-[0.25em] font-medium`}>
-              Get Fuelled
+            <Link href="https://tonentea.rezerv.co/package" className={`${stefanFont.className} text-tone-rose hover:text-tone-brown transition-colors uppercase text-lg tracking-[0.25em] font-medium`}>
+              Pricing
+            </Link>
+            <Link href="/contact" className={`${stefanFont.className} text-tone-rose hover:text-tone-brown transition-colors uppercase text-lg tracking-[0.25em] font-medium`}>
+              Contact
             </Link>
           </div>
 
           <div className="flex items-center">
             {/* Desktop Join Us Button */}
-            <button className={`${stefanFont.className} hidden md:flex bg-tone-rose text-white px-10 py-4 rounded-full hover:bg-tone-rose/80 transition-colors shadow-md hover:shadow-lg text-lg font-medium tracking-widest uppercase cursor-pointer whitespace-nowrap`}>
+            <Link href="#" className={`${stefanFont.className} hidden md:flex bg-tone-rose text-white px-10 py-4 rounded-full hover:bg-tone-rose/80 transition-colors shadow-md hover:shadow-lg text-lg font-medium tracking-widest uppercase cursor-pointer whitespace-nowrap`}>
               Join Us!
-            </button>
+            </Link>
 
             {/* Mobile Hamburger Toggle */}
             <button 
@@ -69,9 +72,9 @@ export default function Navbar() {
           <div className="p-8 pb-12 flex flex-col h-full items-center">
             {/* Header */}
             <div className="flex items-center justify-between w-full mb-16">
-              <div className="scale-75 origin-left">
+              <Link href="/" onClick={() => setIsOpen(false)} className="scale-75 origin-left">
                 <Image src="/logotype.svg?v=2" alt="Tone 'N Tea" width={120} height={20} className="w-auto h-8" />
-              </div>
+              </Link>
               <button 
                 onClick={toggleMenu}
                 className="text-tone-rose p-2 text-2xl"
@@ -81,27 +84,33 @@ export default function Navbar() {
             </div>
 
             {/* Navigation Links */}
-            <nav className="flex flex-col gap-10 items-center w-full">
-              {['Our Story', 'Classes', 'Get Fuelled'].map((item) => (
+            <nav className="flex flex-col gap-8 items-center w-full">
+              {[
+                { label: 'Our Story', href: '/about' },
+                { label: 'Classes', href: 'https://tonentea.rezerv.co/class' },
+                { label: 'Pricing', href: 'https://tonentea.rezerv.co/package' },
+                { label: 'Contact', href: '/contact' },
+              ].map((item) => (
                 <Link 
-                  key={item}
-                  href="#" 
+                  key={item.label}
+                  href={item.href} 
                   onClick={toggleMenu}
                   className={`${stefanFont.className} text-tone-rose text-3xl uppercase tracking-[0.2em] font-medium border-b border-stone-50 transition-all hover:scale-105`}
                 >
-                  {item}
+                  {item.label}
                 </Link>
               ))}
             </nav>
 
             {/* Bottom Section */}
             <div className="mt-auto w-full flex flex-col items-center gap-12">
-              <button 
+              <Link 
+                href="#"
                 onClick={toggleMenu}
-                className={`${stefanFont.className} w-full py-5 bg-tone-rose text-white rounded-full text-2xl font-medium tracking-[0.15em] uppercase shadow-lg shadow-tone-rose/20`}
+                className={`${stefanFont.className} w-full py-5 bg-tone-rose text-white rounded-full text-2xl font-medium tracking-[0.15em] uppercase text-center shadow-lg shadow-tone-rose/20`}
               >
                 Join Us!
-              </button>
+              </Link>
               
               <div className="pt-8 border-t border-stone-100 w-full text-center">
                 <p className="text-stone-300 text-sm uppercase tracking-widest">

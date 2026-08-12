@@ -10,13 +10,15 @@ export default function Footer() {
         <div className="flex flex-col lg:flex-row justify-between items-start gap-16 mb-32">
           {/* Logo Section */}
           <div className="lg:w-1/4">
-            <Image 
-              src="/logotype.svg?v=2" 
-              alt="Tone 'N Tea" 
-              width={160} 
-              height={40} 
-              className="w-auto h-11 shrink-0 opacity-90"
-            />
+            <Link href="/">
+              <Image 
+                src="/logotype.svg?v=2" 
+                alt="Tone 'N Tea" 
+                width={160} 
+                height={40} 
+                className="w-auto h-11 shrink-0 opacity-90"
+              />
+            </Link>
           </div>
 
           {/* Links Groups */}
@@ -24,22 +26,22 @@ export default function Footer() {
             {/* Column 2: Quick Links */}
             <div className="flex flex-col gap-8">
               <h3 className={`${neueFont.className} text-xl font-bold text-[#8A7D7A] tracking-tight`}>
-                Quick Llinks
+                Quick Links
               </h3>
               <ul className="flex flex-col gap-4">
-                <li>
-                  <Link href="#" className={`${neueFont.className} text-stone-400 hover:text-tone-rose transition-colors text-base underline underline-offset-[6px] decoration-stone-200`}>
-                    Our Bites and Drinks
-                  </Link>
-                </li>
                 <li>
                   <Link href="#" className={`${neueFont.className} text-stone-400 hover:text-tone-rose transition-colors text-base underline underline-offset-[6px] decoration-stone-200`}>
                     Classes
                   </Link>
                 </li>
                 <li>
-                  <Link href="#" className={`${neueFont.className} text-stone-400 hover:text-tone-rose transition-colors text-base underline underline-offset-[6px] decoration-stone-200`}>
-                    Programs
+                  <Link href="/pricing" className={`${neueFont.className} text-stone-400 hover:text-tone-rose transition-colors text-base underline underline-offset-[6px] decoration-stone-200`}>
+                    Pricing
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact" className={`${neueFont.className} text-stone-400 hover:text-tone-rose transition-colors text-base underline underline-offset-[6px] decoration-stone-200`}>
+                    Contact
                   </Link>
                 </li>
               </ul>
@@ -52,7 +54,7 @@ export default function Footer() {
               </h3>
               <ul className="flex flex-col gap-4">
                 <li>
-                  <Link href="#" className={`${neueFont.className} text-stone-400 hover:text-tone-rose transition-colors text-base underline underline-offset-[6px] decoration-stone-200`}>
+                  <Link href="/about" className={`${neueFont.className} text-stone-400 hover:text-tone-rose transition-colors text-base underline underline-offset-[6px] decoration-stone-200`}>
                     Our Story
                   </Link>
                 </li>
@@ -63,7 +65,7 @@ export default function Footer() {
                 </li>
                 <li>
                   <Link href="#" className={`${neueFont.className} text-stone-400 hover:text-tone-rose transition-colors text-base underline underline-offset-[6px] decoration-stone-200`}>
-                    Coorporate Order
+                    Corporate Order
                   </Link>
                 </li>
               </ul>
@@ -97,9 +99,13 @@ export default function Footer() {
         <div className="pt-10 border-t border-stone-100 flex flex-col md:flex-row items-center justify-between gap-8 md:gap-4 overflow-hidden">
           {/* Socials */}
           <div className="flex items-center gap-6">
-            {['Instagram', 'TikTok', 'Youtube'].map((social) => (
-              <Link key={social} href="#" className={`${neueFont.className} text-stone-400 hover:text-tone-rose transition-colors text-sm font-bold underline underline-offset-4 decoration-stone-200`}>
-                {social}
+            {[
+              { label: 'Instagram (@tone.and.tea)', href: '#' },
+              { label: 'TikTok', href: '#' },
+              { label: 'Youtube', href: '#' },
+            ].map((social) => (
+              <Link key={social.label} href={social.href} className={`${neueFont.className} text-stone-400 hover:text-tone-rose transition-colors text-sm font-bold underline underline-offset-4 decoration-stone-200`}>
+                {social.label}
               </Link>
             ))}
           </div>

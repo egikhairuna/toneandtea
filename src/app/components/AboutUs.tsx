@@ -5,24 +5,24 @@ import { stefanFont, neueFont } from '../fonts';
 
 const accordionItems = [
   {
-    title: "CONNECT YOUR BODY TO YOUR SOUL",
-    content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.\n\n• Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper\n• suscipit lobortis nisl ut aliquip ex ea commodo consequat.\n• Duis autem vel eum iriure dolor in hendrerit in\n• Vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla\n• Amei, cons ectetuer adipiscing elit, sed diam",
+    title: "WHERE STRENGTH MEETS STILLNESS",
+    content: "We built Tone & Tea for the days you need to push, and the moments you need to pause. In a city that never stops moving, we give you a space to build physical strength without losing your inner peace. Flow through our expert-led yoga and mat pilates sessions, then linger a while longer in our developing tea lounge space—because the best part of working out is the breath you catch right after.",
   },
   {
-    title: "BENEFITS",
-    content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.\n\n• Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper\n• suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+    title: "YOGA",
+    content: "Flow, breathe, and unlock mobility.\n\nFrom dynamic Vinyasa to restorative Yin, our classes build fluid strength, deep flexibility, and mental clarity.",
   },
   {
-    title: "PROGRAMS",
-    content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.\n\n• Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper\n• suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+    title: "MAT PILATES",
+    content: "Precision meets core stability.\n\nStrengthen your powerhouse, refine your posture, and master control through intentional, low-impact movements.",
   },
   {
-    title: "CLASSES",
-    content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.\n\n• Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper\n• suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+    title: "THE TEA & WELLNESS HUB",
+    content: "More than a studio—a transitional space.\n\nWhile our signature tea bar continues to evolve behind the scenes, our communal lounge is always open for you to ground yourself post-class.",
   },
   {
-    title: "DRINKS?",
-    content: "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.\n\n• Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper\n• suscipit lobortis nisl ut aliquip ex ea commodo consequat.",
+    title: "THE TONE & TEA DIFFERENCE",
+    content: "• Intentionally Designed Spaces: Earthy tones, natural lighting, and minimalist aesthetics engineered to lower your cortisol the moment you step inside.\n• Expert Instructors: Certified guides who honor your body's unique limits while safely challenging your potential.\n• The Post-Workout Ritual: A seamless transition from high-focus movement to relaxed social connection over warm, grounding infusions.",
   },
 ];
 
@@ -30,7 +30,7 @@ export default function AboutUs() {
   const [activeIndex, setActiveIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-tone-cream py-24 md:py-32 overflow-hidden border-t border-tone-rose/20 w-full">
+    <section id="about" className="bg-tone-cream py-24 md:py-32 overflow-hidden border-t border-tone-rose/20 w-full">
       <div className="w-full px-6 md:px-16 lg:px-24 flex flex-col md:flex-row gap-16 md:gap-24 items-start">
         {/* Left: Heading */}
         <div className="w-full md:w-1/4">
